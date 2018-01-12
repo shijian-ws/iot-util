@@ -290,6 +290,14 @@ public final class Tools {
         return formatDateTime(pattern, getCurrentTimeMillis());
     }
 
+    /**
+     * 获取指定格式的时间戳
+     */
+    public static long getDateTime(String pattern) {
+        String time = formatDateTime(pattern, getCurrentTimeMillis());
+        return parseDateTime(pattern, time);
+    }
+
     private static Map<String, DateTimeFormatter> FORMAT_CACHE = new ConcurrentHashMap<>();
 
     private static DateTimeFormatter getFormatter(String pattern) {
